@@ -1,6 +1,6 @@
 # HANDOFF
 
-**Repo tip:** `fe2adbf`
+**Repo tip:** `pending`
 **Standing session-start steps:**
 1. Read `docs/ROADMAP.md` R1-R3 and R0, and this file, before proposing work (Rule 1)
 2. Skim `docs/GLOSSARY.md` if any symbol/acronym is unfamiliar
@@ -9,28 +9,32 @@
 
 ## Where we are
 
-**P0: closing this session.** T0.1-T0.4 done. Docs restructured, decisions locked, repo scaffolded.
-
-**What exists right now:**
-- Repo at `github.com/Talley2038/Bueno` (private) with full doc set
-- No code, no config, no running software
+**P0: open.** T0.1-T0.5 done (repo, docs, decisions, voice pass). T0.6-T0.9 are open and doable right now from Mac.
 
 ---
 
 ## Next-steps (priority order)
 
-### 1. P1 bring-up: blocked on physical access (~2026-09-11)
-Install Ollama + Tailscale on the Windows box, pull first model pair, confirm reachable from Mac. See R4 T1.1-T1.5.
+### 1. T0.6: Tailscale account + Mac install
+Create account, install on Mac, confirm `tailscale status` shows the Mac as a node. No desktop needed.
 
-### 2. P2 chat interface: after P1
-Open WebUI connected to the Ollama endpoint. See R4 T2.1-T2.3.
+### 2. T0.7: Model research
+Benchmark candidate models against 12GB VRAM constraint. Write up recommendation in DECISIONS.md. Can be done as pure research right now.
+
+### 3. T0.8: System prompt v1
+Draft the system prompt that shapes the local model's behavior (coding style, recipe reasoning, tone, tool-call conventions). Save as `config/system_prompt_v1.md`.
+
+### 4. T0.9: Fine-tuning dataset format
+Design the JSONL schema, sourcing strategy, and target volume. Save as `data/README.md`.
+
+### 5. P1: blocked on desktop access (~2026-09-11)
+Everything in P1 requires the Windows box.
 
 ---
 
 ## Known open items
 
-- No physical access to the Windows inference host for ~7 days (only real blocker)
-- Model pair selection (leaning Qwen2.5-Coder 14B + Qwen2.5 14B) is a strong candidate but not locked. Decision logged at T1.5, not before
+- No physical access to the Windows desktop for ~7 days (blocks P1, does NOT block T0.6-T0.9)
 
 ---
 
