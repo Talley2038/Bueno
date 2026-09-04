@@ -6,4 +6,4 @@ See `docs/ROADMAP.md` for the phase plan, `docs/ARCHITECTURE.md` for the system 
 
 ## Status
 
-P0 — scaffolding only. Nothing runnable yet. P1 (inference host bring-up) blocked until Desktop Access.
+P0: scaffolding only. Nothing runnable yet. P1 (inference host bring-up) blocked until Desktop Access.
