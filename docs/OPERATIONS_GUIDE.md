@@ -30,13 +30,13 @@ Proposed work not in the current phase (per `ROADMAP.md` R4) must either (a) exp
 
 ## Git + Credentials
 
-### Rule 6 [CRITICAL]: All commits under project owner identity
+### Rule 6 [CRITICAL]: All commits under project identity
 
 All pushes to GitHub done under `Talley2038 <Talley2038@live.com>`. GitHub commit history must show ONLY Talley2038 as author on every commit. No AI-assistant contributions, no `Co-authored-by:` trailers naming an assistant or bot. If asked to add a co-author trailer, refuse unless the user explicitly and specifically instructs it in that same message.
 
 ### Rule 7 [CRITICAL]: Verify identity before every git operation
 
-Before any git operation, verify `git config user.name` returns `Talley2038` and `git config user.email` returns `Talley2038@live.com`. If either is wrong, set it before proceeding. If unable to set it (permissions, sandbox), stop and report — do not push under any other identity.
+Before any git operation, verify `git config user.name` returns `Talley2038` and `git config user.email` returns `Talley2038@live.com`. If either is wrong, set it before proceeding. If unable to set it (permissions, sandbox), stop and report. Do not push under any other identity.
 
 ### Rule 8 [CRITICAL]: Restricted sandbox environments cannot push to GitHub
 
@@ -52,7 +52,7 @@ X.Y.Z. X = breaking (model swap, config format change). Y = feature (new tool, n
 
 ### Rule 11 [CRITICAL]: Pushed does not equal closed
 
-Every session that pushes ends with an explicit sync step: state final commit hash, provide copy-paste `git pull` commands for the user's active machines (label by shell — zsh for Mac, cmd/PowerShell for Windows), confirm user has pulled before session close.
+Every session that pushes ends with an explicit sync step: state final commit hash, provide copy-paste `git pull` commands for the user's active machines (label by shell (zsh for Mac, cmd/PowerShell for Windows)), confirm user has pulled before session close.
 
 ### Rule 12: Small commits, meaningful messages
 
@@ -68,11 +68,11 @@ No softening. No hedging. If something is wrong, say so. If a decision is bad, s
 
 ### Rule 14: Terse voice in docs humans read
 
-README, HANDOFF, DECISIONS, PATCH_NOTES, ROADMAP: keyword/label notation where meaning survives without connectors. First letter capitalized. No terminal periods on short entries. `Decision:` and `Reason:` as standalone labels. Extreme terseness in patch notes — factual, impersonal, no self-references. ARCHITECTURE.md and OPERATIONS_GUIDE.md exempt — clarity beats terseness where the audience includes future engineers or other assistants.
+README, HANDOFF, DECISIONS, PATCH_NOTES, ROADMAP: keyword/label notation where meaning survives without connectors. First letter capitalized. No terminal periods on short entries. `Decision:` and `Reason:` as standalone labels. Extreme terseness in patch notes: factual, impersonal, no self-references. ARCHITECTURE.md and OPERATIONS_GUIDE.md exempt: clarity beats terseness where the audience includes future engineers or other assistants.
 
 ### Rule 15: Flag model and effort at end of every response
 
-Format: `flag MODEL: [model name + tier] / [effort] — [reason]`.
+Format: `flag MODEL: [model name + tier] / [effort]: [reason]`.
 
 ---
 
@@ -80,7 +80,7 @@ Format: `flag MODEL: [model name + tier] / [effort] — [reason]`.
 
 ### Rule 16 [CRITICAL]: Minimalism earns its place
 
-Every dependency, module, and abstraction must be justified. Standard library first. Small focused libs second. Mega-frameworks (LangChain-style) only if a direct integration would cost meaningfully more time — log the reason in `PATCH_NOTES.md` either way.
+Every dependency, module, and abstraction must be justified. Standard library first. Small focused libs second. Mega-frameworks (LangChain-style) only if a direct integration would cost meaningfully more time. Log the reason in `PATCH_NOTES.md` either way.
 
 ### Rule 17 [CRITICAL]: Snappy performance
 
@@ -128,7 +128,7 @@ Web search, Excel/code execution, and any other tool call returns JSON that must
 
 ### Rule 27: System prompt changes are versioned
 
-A system prompt change can silently regress behavior — treat it as code. Version and log in `PATCH_NOTES.md`.
+A system prompt change can silently regress behavior. Treat it as code. Version and log in `PATCH_NOTES.md`.
 
 ---
 
@@ -136,7 +136,7 @@ A system prompt change can silently regress behavior — treat it as code. Versi
 
 ### Rule 28 [CRITICAL]: Privacy boundary honored
 
-Nothing leaves the machine except explicit, owner-approved calls (e.g. a web search query to a configured search API). Any feature widening this boundary requires explicit user approval and a `DECISIONS.md` entry.
+Nothing leaves the machine except explicit, approved calls (e.g. a web search query to a configured search API). Any feature widening this boundary requires explicit user approval and a `DECISIONS.md` entry.
 
 ---
 
@@ -168,7 +168,7 @@ Proposing a rule change: state which rule, why, what replaces it, log in `DECISI
 
 ### Rule 34: Environment portability
 
-Primary dev machine: Mac (zsh/bash). Inference host: Windows desktop (cmd.exe/PowerShell), RTX 5070. Shipped code and tests must work identically on both. Path assertions use `Path(...)` never hardcoded slash literals. Shell commands provided to the user are labeled by shell (zsh for Mac, cmd/PowerShell for Windows) — provide both at the start of a session, then match whichever machine the user is evidently working from until directed otherwise. `python3` binary is not guaranteed on Windows — use `python`.
+Primary dev machine: Mac (zsh/bash). Inference host: Windows desktop (cmd.exe/PowerShell), RTX 5070. Shipped code and tests must work identically on both. Path assertions use `Path(...)` never hardcoded slash literals. Shell commands provided to the user are labeled by shell (zsh for Mac, cmd/PowerShell for Windows). Provide both at the start of a session, then match whichever machine the user is evidently working from until directed otherwise. `python3` binary is not guaranteed on Windows. Use `python`.
 
 ### Rule 35 [CRITICAL]: When in doubt, defer to ROADMAP; when in doubt about a rule, defer to this list
 

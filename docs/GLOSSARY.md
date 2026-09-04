@@ -2,7 +2,7 @@
 
 Canonical reference for every acronym, symbol prefix, ID pattern, and naming convention used across Bueno. When a document uses shorthand, this file is where the shorthand is defined. Update alongside any change to the naming systems.
 
-Format: label — expansion (kind) — one-line meaning. Grouped by domain. Retired terms live at the bottom so they resolve for anyone reading historical docs.
+Format: label: expansion (kind): one-line meaning. Grouped by domain. Retired terms live at the bottom so they resolve for anyone reading historical docs.
 
 ---
 
@@ -12,7 +12,7 @@ Format: label — expansion (kind) — one-line meaning. Grouped by domain. Reti
 - **P0, P1, P2 … P8**: Phase. Project ladder from P0 (scaffolding) through P8 (expansion). See `ROADMAP.md` R4 for the current phase and R5 for future-phase sketches
 - **T#.#**: Task within a phase (e.g. T1.3 = task 3 of Phase 1). Used in R4 task checklists
 - **Rule N**: Numbered rule in `docs/OPERATIONS_GUIDE.md` (Rules 1–35). Always spelled `Rule N`, never a bare number
-- **`session YYYY-MM-DD (hash)`** — Reference to a specific working session, by ISO date + short git commit hash of that session's first (or representative) commit. Forever standard for session references
+- **`session YYYY-MM-DD (hash)`**: Reference to a specific working session, by ISO date + short git commit hash of that session's first (or representative) commit. Forever standard for session references
 
 ## Technical
 
