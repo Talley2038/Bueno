@@ -3,6 +3,7 @@
 Canonical scope + phase map + task-level status. Read R1-R3 at the start of every session; read R0 always.
 
 **Status legend:** 
+
 `[ ]` open  
 
 `[~]` in progress  
@@ -12,6 +13,7 @@ Canonical scope + phase map + task-level status. Read R1-R3 at the start of ever
 `[!]` blocked 
 
 **Format:** 
+
 `- [x] ID · Description (testable done-state) 
 
 
