@@ -1,37 +1,73 @@
-# ARCHITECTURE.md
+# ARCHITECTURE
 
-Clarity over terseness in this file — audience includes future engineers
-(Rule 14 exemption).
+**Status:** Canonical design document
+**Last updated:** 2026-09-04
 
-## Overview
-Bueno is a local-first LLM assistant. It has two machines in its topology:
+Clarity over terseness in this file — audience includes future engineers (Rule 14 exemption).
 
-- **Windows desktop** ("the inference host"): runs Ollama, serves an
-  OpenAI-compatible API over the LAN. Has the only GPU (RTX 5070, 12GB
-  VRAM) in the setup.
-- **Mac** ("the dev/client machine"): where development happens, and
-  where the chat frontend (Open WebUI) is used day-to-day.
+---
 
-## Target OSes
-- Windows desktop: Windows 11, cmd.exe/PowerShell
-- Mac: macOS, zsh/bash
+## 1. Purpose
 
-Code and scripts that run on both must be tested on both; scripts specific
-to one host are labeled clearly by directory or filename.
+Bueno is a private, local-first LLM assistant. No cloud inference. No central server beyond the owner's own hardware. Two machines in the topology, connected via Tailscale.
 
-## Components
-- **Inference server**: Ollama, running on the Windows box. [NOT BUILT]
-- **Chat frontend**: Open WebUI, connecting to the Ollama endpoint over
-  LAN. [NOT BUILT]
-- **Web search tool**: TBD (SearXNG self-hosted vs. Brave Search API).
-  [NOT BUILT]
-- **Excel/code execution tool**: Python sandbox with openpyxl/pandas,
-  exposed as a callable tool to the model. [NOT BUILT]
-- **RAG layer**: TBD, likely a local vector DB (Chroma/Qdrant) over
-  personal docs/notes. [NOT BUILT]
-- **Fine-tuning pipeline**: LoRA via Unsloth or Axolotl, run on the
-  Windows box's GPU. [NOT BUILT]
+## 2. Design Principles
 
-## Network
-Mac talks to the Windows box's Ollama API over the LAN. Exact addressing
-(static IP, hostname, or Tailscale) — open question, see HANDOFF.md.
+- **Local-first.** Inference runs on hardware the owner physically controls. No data leaves the LAN except explicit tool calls (web search)
+- **Minimalism earns its place.** Standard tools first. Dependencies justified and logged (Rule 16)
+- **Idempotent operations.** Re-running anything is always safe (Rule 24)
+- **Portable paths.** All file access via `pathlib.Path`. No machine-specific paths hardcoded
+
+## 3. Topology
+
+```
+┌─────────────────────────────────────────────────┐
+│ WINDOWS DESKTOP (inference host)                 │
+│  OS: Windows 11, cmd.exe / PowerShell            │
+│  GPU: RTX 5070, 12GB VRAM                        │
+│  RAM: 32GB DDR5-6000                             │
+│  CPU: Ryzen 7 9700X (8C/16T)                     │
+│  Storage: 2TB NVMe                               │
+│                                                   │
+│  Ollama (inference server)          [NOT BUILT]   │
+│  Tailscale (mesh node)              [NOT BUILT]   │
+└────────────────────┬──────────────────────────────┘
+                     │ Tailscale mesh (encrypted)
+┌────────────────────┴──────────────────────────────┐
+│ MAC (dev / client machine)                        │
+│  OS: macOS, zsh                                   │
+│                                                   │
+│  Open WebUI (chat frontend)         [NOT BUILT]   │
+│  Tailscale (mesh node)              [NOT BUILT]   │
+│  Dev tools (git, python, editor)                  │
+└───────────────────────────────────────────────────┘
+                     │ Tailscale mesh
+┌────────────────────┴──────────────────────────────┐
+│ HUSBAND'S DEVICE                                  │
+│  Open WebUI (browser)               [NOT BUILT]   │
+│  Tailscale (mesh node)              [NOT BUILT]   │
+└───────────────────────────────────────────────────┘
+```
+
+## 4. Components
+
+| Component | Tech | Status |
+|---|---|---|
+| Inference server | Ollama | [NOT BUILT] |
+| Chat frontend | Open WebUI | [NOT BUILT] |
+| Web search tool | TBD (SearXNG or Brave API) | [NOT BUILT] |
+| Excel/code execution tool | Python sandbox (openpyxl, pandas) | [NOT BUILT] |
+| RAG layer | TBD (Chroma/Qdrant) | [NOT BUILT] |
+| Fine-tuning pipeline | TBD (Unsloth/Axolotl), LoRA | [NOT BUILT] |
+
+## 5. Network
+
+All inter-machine communication routed through Tailscale. Each device gets a stable Tailscale hostname. No ports opened on the home router. No direct internet exposure of the inference server.
+
+Open WebUI serves its frontend locally on whichever device the user is on, connecting to the Ollama API at `http://<windows-tailscale-hostname>:11434`.
+
+## 6. Target Environment
+
+- **Windows desktop:** Windows 11, `cmd.exe` primary (PowerShell available). `python` (not `python3`)
+- **Mac:** macOS, zsh/bash. `python3`
+- **Sandbox (assistant):** Linux. Code and tests must work on all three
