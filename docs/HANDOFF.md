@@ -38,8 +38,7 @@ Open WebUI connected to the Ollama endpoint. See R4 T2.1–T2.3.
 
 **Mac (zsh):**
 ```
-cd ~/path/to/Bueno   # adjust to actual clone location
-git pull
+cd ~/Bueno && git pull
 ```
 
 **Windows (cmd):**

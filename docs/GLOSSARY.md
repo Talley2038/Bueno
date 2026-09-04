@@ -25,7 +25,7 @@ Format: label — expansion (kind) — one-line meaning. Grouped by domain. Reti
 
 ## Paths
 
-- **Mac dev path** — TBD (user to confirm clone location)
+- **Mac dev path** — `~/Bueno` (`/Users/nali/Bueno`)
 - **Windows inference host path** — TBD (set at P1 bring-up)
 - **Repo** — `github.com/Talley2038/Bueno` (private)
 
