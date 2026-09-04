@@ -12,7 +12,7 @@ Canonical scope + phase map + task-level status. Read R1–R3 at the start of ev
 - **Phase:** **P0 OPEN** (scaffolding)
 - **Version:** `v0.1.0` (initial scaffold)
 - **Repo:** https://github.com/Talley2038/Bueno (private)
-- **Current milestone:** P0 — repo structure, docs, no code yet. P1 blocked on owner regaining physical access to the Windows inference host (~7 days from 2026-09-04)
+- **Current milestone:** P0: repo structure, docs, no code yet. P1 blocked on regaining physical to desktop (~7 days from 2026-09-04)
 - **Active blockers:** No physical access to Windows desktop until ~2026-09-11
 - **Last audit:** None yet (first phase)
 
@@ -20,7 +20,7 @@ Canonical scope + phase map + task-level status. Read R1–R3 at the start of ev
 
 ## R1. North Star
 
-Build and maintain Bueno — a private, local-first LLM assistant that runs entirely on the owner's own hardware. Windows desktop (RTX 5070) hosts inference via Ollama; Mac is the primary dev/client machine. Accessible from anywhere via Tailscale. Two users (owner + husband).
+Build and maintain Bueno (a private, locally-run LLM assistant that runs entirely on the owner's own hardware). Windows desktop hosts inference via Ollama; Mac is the occasional dev/client machine. Accessible from anywhere via Tailscale. Two planned users.
 
 Capabilities: coding help, recipe generation, web-search-augmented answers, Excel/data automation, general assistant work. No cloud dependency for inference. No data leaves the LAN except explicit tool calls (web search API).
 
