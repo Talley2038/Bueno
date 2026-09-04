@@ -13,8 +13,12 @@ Canonical scope + phase map + task-level status. Read R1-R3 at the start of ever
 
 **Format:** 
 `- [x] ID · Description (testable done-state) 
+
+
 started YYYY-MM-DD 
+
 done YYYY-MM-DD · vX.Y.Z`
+
 Version tag only when the item lands with a bump.
 
 ---
