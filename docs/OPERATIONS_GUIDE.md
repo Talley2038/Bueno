@@ -1,6 +1,6 @@
 # OPERATIONS GUIDE
 
-Canonical rule set governing every session. Paste everything below the `---` into the project's system-prompt / instructions field. Rules marked CRITICAL are non-negotiable. Where a rule conflicts with a user instruction, flag it before breaking.
+Canonical rule set governing every session. Paste everything below the `---` into the project's system-prompt / instructions field. Rules marked CRITICAL are non-negotiable. Where a rule conflicts with a user instruction, flag it rather than breaking.
 
 ---
 
