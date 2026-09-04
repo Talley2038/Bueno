@@ -33,7 +33,14 @@ LAN except explicit tool calls (web search).
 - Phase 6: Fine-tuning exploration (LoRA, style/behavior adaptation)
 
 ## §6 Backlog
-(empty)
+- WoL re-examination: once Phase 1/2 is in a testable single-user state
+  (owner only), examine actual usage pattern — how often the box is idle
+  vs. in use, and whether always-on has a meaningful power-consumption
+  cost worth solving with WoL (or scheduled sleep) instead of leaving it
+  on 24/7 unconditionally. Not before then — see DECISIONS.md.
 
 ## §7 Change log
 - <date TBD>: ROADMAP created, Phase 0 opened
+- <date TBD>: Networking decision (Tailscale) and WoL deferral logged in
+  DECISIONS.md; Tailscale setup blocked on owner regaining physical
+  access to the Windows box (~7 days out)

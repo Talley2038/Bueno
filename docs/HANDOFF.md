@@ -14,10 +14,10 @@ Qwen2.5-Coder 14B + Qwen2.5 14B as a starting pair per ROADMAP.md §2
 hardware constraints).
 
 ## Open questions for owner
-- LAN setup between Mac and Windows box — static IP / hostname for the
-  Windows machine, or plan to use Tailscale?
-- Confirm Windows box stays on/reachable during work sessions, or needs
-  wake-on-LAN handling?
+(resolved — see DECISIONS.md: Tailscale for networking, WoL deferred)
 
 ## Known blockers
-None yet.
+- Owner has no physical access to the Windows inference host for ~7 days.
+  Tailscale install/config on that machine can't happen until then.
+  Everything else (repo scaffolding, planning) can proceed in the
+  meantime.
