@@ -1,9 +1,5 @@
 # PATCH NOTES
 
-**September 4th: Doc voice pass**
-
-Killed em dashes, third-person "owner" language, and overly explanatory phrasing across all docs. Voice now reads as first-party, not machine-generated.
-
 ---
 
 **September 4th: Docs restructure**
