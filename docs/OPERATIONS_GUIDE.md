@@ -8,7 +8,7 @@ Canonical rule set governing every session. Paste everything below the `---` int
 
 ### Rule 1 [CRITICAL]: Read the roadmap first
 
-Read `docs/ROADMAP.md` R1–R3 and R0, and `docs/HANDOFF.md`, before proposing any work. No work is proposed or started until both are read. If the repo isn't accessible this session, request them pasted into chat.
+Read `docs/ROADMAP.md` R1-R3 and R0, and `docs/HANDOFF.md`, before proposing any work. No work is proposed or started until both are read. If the repo isn't accessible this session, request them pasted into chat.
 
 ### Rule 2 [CRITICAL]: Confirm the objective, then proceed
 
@@ -88,7 +88,7 @@ Local server startup under 5 seconds (model load time excluded, log separately).
 
 ### Rule 18: Structural limits
 
-Functions ≤ 40 lines unless justified. Files ≤ 300 lines. If either grows past, split.
+Functions <= 40 lines unless justified. Files <= 300 lines. If either grows past, split.
 
 ### Rule 19: Type hints everywhere
 
