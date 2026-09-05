@@ -1,6 +1,6 @@
 # HANDOFF
 
-**Repo tip:** `pending`
+**Repo tip:** `ca83805`
 **Standing session-start steps:**
 1. Read `docs/ROADMAP.md` R1-R3 and R0, and this file, before proposing work (Rule 1)
 2. Skim `docs/GLOSSARY.md` if any symbol/acronym is unfamiliar
@@ -9,17 +9,17 @@
 
 ## Where we are
 
-**P0: open.** T0.1-T0.5 done (repo, docs, decisions, voice pass). T0.6-T0.9 are open and doable right now from Mac.
+**P0: open.** T0.1-T0.5 done (repo, docs, decisions, voice pass, rule amendment). T0.6-T0.9 are open and doable right now from Mac, no desktop needed.
 
 ---
 
 ## Next-steps (priority order)
 
 ### 1. T0.6: Tailscale account + Mac install
-Create account, install on Mac, confirm `tailscale status` shows the Mac as a node. No desktop needed.
+Create account, install on Mac, confirm `tailscale status` shows the Mac as a node.
 
 ### 2. T0.7: Model research
-Benchmark candidate models against 12GB VRAM constraint. Write up recommendation in DECISIONS.md. Can be done as pure research right now.
+Benchmark candidate models (Qwen2.5-Coder 14B, Qwen2.5 14B, Qwen3, DeepSeek-R1-Distill) against the 12GB VRAM constraint. Write up recommendation in DECISIONS.md.
 
 ### 3. T0.8: System prompt v1
 Draft the system prompt that shapes the local model's behavior (coding style, recipe reasoning, tone, tool-call conventions). Save as `config/system_prompt_v1.md`.
