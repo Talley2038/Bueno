@@ -6,12 +6,6 @@ Added Rule 36 (ASCII-only characters), Rule 37 (first-party document voice), Rul
 
 ---
 
-**September 4th: Doc voice pass**
-
-Killed em dashes, third-person "owner" language, and overly explanatory phrasing across all docs. Voice now reads as first-party, not machine-generated.
-
----
-
 **September 4th: Docs restructure**
 
 PROJECT_RULES.md replaced by OPERATIONS_GUIDE.md. ROADMAP rewritten to R0-R7 with status legend and task-level checklist. GLOSSARY.md created. All docs reformatted.
