@@ -1,5 +1,11 @@
 # PATCH NOTES
 
+**September 4th: Rule amendment (Rule 33)**
+
+Added Rule 36 (ASCII-only characters), Rule 37 (first-party document voice), Rule 38 (roadmap task granularity). Codifies the manual cleanup passes done earlier this session so they don't recur.
+
+---
+
 **September 4th: Doc voice pass**
 
 Killed em dashes, third-person "owner" language, and overly explanatory phrasing across all docs. Voice now reads as first-party, not machine-generated.

@@ -33,3 +33,17 @@ Format: terse, first letter capitalized, no terminal periods. `Decision:` and `R
 ### Doc structure: R0-R7 roadmap, OPERATIONS_GUIDE as single rule source
 - **Decision:** ROADMAP uses R0-R7 section structure with status legend and task-level checklist. OPERATIONS_GUIDE.md is the single canonical rule set, pasted into the Claude Project instructions field. PROJECT_RULES.md retired
 - **Reason:** Adopted from a working project with proven doc-structure evolution. R0-R7 answers "what's next" at a glance. Single rule file eliminates two-copy drift
+
+## `2026-09-04` (rule amendment, Rule 33)
+
+### New Rule 36: ASCII-only characters
+- **What:** All docs and code comments restricted to standard US keyboard characters. No em dash, en dash, middle dot, ellipsis character, section sign, or unicode math symbols
+- **Why:** Manual cleanup was needed across every doc to remove em dashes, middle dots, ellipsis characters, and the section sign after the fact. Codifying this prevents the same cleanup pass on every future doc edit
+
+### New Rule 37: First-party document voice
+- **What:** Docs (outside ARCHITECTURE.md and OPERATIONS_GUIDE.md) read as if written directly, not as an external description. No third-person framing of the person doing the work. Other people mentioned are described generically unless naming them is functionally necessary
+- **Why:** Original docs read as machine-generated, with third-person references and unnecessary personal detail. Required a manual voice pass to fix
+
+### New Rule 38: Roadmap task granularity
+- **What:** Every roadmap task requires a testable done-state. Every phase requires a closing gate. Tasks not blocked by the phase's stated blocker get pulled into the active phase rather than bundled with blocked work
+- **Why:** Original ROADMAP had vague task descriptions and lumped all P1 work as blocked, hiding several tasks that were actually doable immediately. Required a manual rewrite to fix

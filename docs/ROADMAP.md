@@ -166,6 +166,7 @@ Non-negotiable unless explicitly reopened in `DECISIONS.md`.
 
 ## R7. Change Log
 
+- `2026-09-04`: Rule amendment (Rule 33): added Rule 36 (ASCII-only), Rule 37 (first-party voice), Rule 38 (roadmap granularity) to OPERATIONS_GUIDE.md. Logged in DECISIONS.md
 - `2026-09-04`: P0 expanded with pre-desktop tasks (T0.6-T0.9). All phases given testable done-states per task. Phase gates defined. Backlog item added (Modelfile management)
 - `2026-09-04`: Doc voice pass: em dashes, third-person language, and section signs permanently removed from all docs
 - `2026-09-04`: Docs restructured: PROJECT_RULES.md replaced by OPERATIONS_GUIDE.md. ROADMAP rewritten to R0-R7 format. GLOSSARY.md created. P0 tasks T0.1-T0.4 retroactively logged and closed

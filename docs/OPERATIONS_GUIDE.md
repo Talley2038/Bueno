@@ -173,3 +173,19 @@ Primary dev machine: Mac (zsh/bash). Inference host: Windows desktop (cmd.exe/Po
 ### Rule 35 [CRITICAL]: When in doubt, defer to ROADMAP; when in doubt about a rule, defer to this list
 
 When both are ambiguous, pause and ask before acting.
+
+---
+
+## Documentation Standards
+
+### Rule 36 [CRITICAL]: ASCII-only characters
+
+All docs and code comments use only standard US keyboard characters. No em dash, en dash, middle dot, ellipsis character, section sign, or non-ASCII math symbols. Use a hyphen where an em dash or en dash would go. Use three periods for an ellipsis. Use the project's own numbering scheme (R1, T1.2, etc.) instead of a section sign. Use ASCII math (<=, >=) instead of unicode equivalents. After any doc edit pass, verify with a repo-wide non-ASCII grep, not by eye.
+
+### Rule 37: First-party document voice
+
+Docs outside ARCHITECTURE.md and OPERATIONS_GUIDE.md read as if written directly, not as an external description of the work. No third-person framing of the person doing the work. Extreme terseness in patch notes (per Rule 14): factual, impersonal, no self-references, no unnecessary hedging or over-explanation. Other people mentioned in the project (family, collaborators) are described generically (e.g. "two planned users") unless naming them is functionally necessary.
+
+### Rule 38: Roadmap task granularity
+
+Every roadmap task has a testable done-state, not a vague action ("install Ollama" becomes "install Ollama, done when `ollama serve` responds on `localhost:11434`"). Every phase has a gate: explicit criteria for what must be true to close it. Tasks not blocked by the phase's stated blocker are pulled into the active phase rather than bundled under one blanket blocked status.
